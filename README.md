@@ -3,16 +3,16 @@
 All test render list component (`./source/list.js`) with data from dataset (`./data.js`).
 
 For `ITERATION_COUNT = 100` and `CHILDREN_COUNT = 100`:
-- Avarage time of React: 13ms;
-- Avarage time of ReactServerRendering: 4ms.
+- Avarage time of React: 17ms;
+- Avarage time of ReactServerRendering: 2ms.
 
 For `ITERATION_COUNT = 100` and `CHILDREN_COUNT = 1000`:
-- Avarage time of React: 146ms;
-- Avarage time of ReactServerRendering: 51ms.
+- Avarage time of React: 132ms;
+- Avarage time of ReactServerRendering: 18ms.
 
 For `ITERATION_COUNT = 100` and `CHILDREN_COUNT = 10000`:
 - Avarage time of React: 1352ms;
-- Avarage time of ReactServerRendering: 485ms.
+- Avarage time of ReactServerRendering: 194ms.
 
 # Change configuration
 
