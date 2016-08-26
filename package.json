@@ -10,12 +10,9 @@
   "author": "Andrey Morozov <alt-j@yandex-team.ru>",
   "license": "MIT",
   "dependencies": {
-    "react-server-rendering": "0.0.3",
+    "react-server-rendering": "0.0.4",
     "react": "15.3.0",
     "react-dom": "15.3.0"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "benchmark": "node index.js"

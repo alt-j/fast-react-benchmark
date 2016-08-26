@@ -1,13 +1,14 @@
 process.env.NODE_ENV = 'production';
 
-var ITERATION_COUNT = 1000;
+var ITERATION_COUNT = 100;
+var CHILDREN_COUNT = 100;
 
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
 
 var ReactServerRendering = require('react-server-rendering');
 
-var dataSet = require('./data');
+var dataSet = require('./generate-data')(CHILDREN_COUNT);
 
 var getListView = require('./source/list');
 
