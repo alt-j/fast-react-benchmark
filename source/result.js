@@ -1,39 +1,34 @@
-module.exports = function (React) {
-    return React.createClass({
-        displayName: this.name,
+var vidom = require('vidom');
 
-        _renderTitle: function () {
-            var title = this.props.title;
-            var url = this.props.url;
+module.exports = vidom.createComponent({
+    _renderTitle: function (attrs) {
+        var title = attrs.title;
+        var url = attrs.url;
 
-            if (url) {
-                return React.createElement('a', {href: url}, title);
-            }
-
-            return React.createElement('div', null, title);
-        },
-
-        _renderCategories: function () {
-            var categories = this.props.categories;
-            if (!categories) {
-                return null;
-            }
-
-            var content = categories.slice(0, 2).map(function (category) {
-                return category.name;
-            }).join(', ');
-
-            return React.createElement('div', null, content);
-        },
-
-        render: function () {
-            return React.createElement(
-                'div',
-                null,
-                this._renderTitle(),
-                this._renderCategories(),
-                this.props.address ? React.createElement('div', null, this.props.address) : null
-            );
+        if (url) {
+            return vidom.node('a').children(title).attrs({href: url});
         }
-    });
-};
+
+        return vidom.node('div').children(title);
+    },
+
+    _renderCategories: function (categories) {
+        if (!categories) {
+            return null;
+        }
+
+        var content = categories.slice(0, 2).map(function (category) {
+            return category.name;
+        }).join(', ');
+
+        return vidom.node('div').children(content);
+    },
+
+    onRender: function (attrs) {
+        return vidom.node('div').children([
+            this._renderTitle(attrs),
+            this._renderCategories(attrs.categories),
+            attrs.address ? vidom.node('div').children(attrs.address) : null
+        ]);
+    }
+});

@@ -3,25 +3,17 @@ process.env.NODE_ENV = 'production';
 var ITERATION_COUNT = 100;
 var CHILDREN_COUNT = 100;
 
-var React = require('react');
-var ReactDOMServer = require('react-dom/server');
-
-var ReactServerRendering = require('react-server-rendering');
+var vidom = require('vidom');
 
 var dataSet = require('./generate-data')(CHILDREN_COUNT);
 
-var getListView = require('./source/list');
+var List = require('./source/list');
 
-var callback1 = function (listView, dataSet) {
-    var element = React.createElement(listView, dataSet);
-    return ReactDOMServer.renderToString(element);
-}.bind(this, getListView(React), dataSet);
-console.log('Avarage time of React: ' + test(callback1) + 'ms')
-
-var callback2 = function (listView, dataSet) {
-    return ReactServerRendering.createElement(listView, dataSet);
-}.bind(this, getListView(ReactServerRendering), dataSet);
-console.log('Avarage time of ReactServerRendering: ' + test(callback2) + 'ms')
+var callback = function () {
+    var element = vidom.node(List).attrs(dataSet);
+    return vidom.renderToString(element)
+};
+console.log('Avarage time of React: ' + test(callback) + 'ms')
 
 function test(callback) {
     var sumTime = 0;

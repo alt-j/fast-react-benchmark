@@ -1,40 +1,33 @@
-var getResult = require('./result');
+var vidom = require('vidom');
 
-module.exports = function (React) {
-    var Result = getResult(React);
+var Result = require('./result');
 
-    return React.createClass({
-        displayName: this.name,
-
-        _renderList: function () {
-            var list = this.props.list;
-            if (!list) {
-                return null;
-            }
-
-            return React.createElement(
-                'div',
-                null,
-                list.map(function (feature, index) {
-                    return React.createElement(Result, {
-                        title: feature.title,
-                        categories: feature.categories,
-                        address: feature.address,
-                        url: feature.url,
-
-                        key: index
-                    });
-                })
-            );
-        },
-
-        render: function () {
-            return React.createElement(
-                'div',
-                {style: {display: 'none'}},
-                React.createElement('h1', null, this.props.title),
-                this._renderList()
-            );
+module.exports = vidom.createComponent({
+    _renderList: function (list) {
+        if (!list) {
+            return null;
         }
-    });
-};
+
+        return vidom.node('div').children(
+            list.map(function (feature, index) {
+                return vidom.node(Result).attrs({
+                    title: feature.title,
+                    categories: feature.categories,
+                    address: feature.address,
+                    url: feature.url,
+
+                    key: index
+                });
+            })
+        );
+    },
+
+    onRender: function (attrs) {
+        return vidom.node('div').attrs({
+            style: {display: 'none'}
+        }).children([
+            vidom.node('h1').children(attrs.title),
+            this._renderList(attrs.list)
+        ]);
+    }
+});
