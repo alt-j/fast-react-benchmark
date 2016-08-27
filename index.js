@@ -16,12 +16,12 @@ var callback1 = function (listView, dataSet) {
     var element = React.createElement(listView, dataSet);
     return ReactDOMServer.renderToString(element);
 }.bind(this, getListView(React), dataSet);
-console.log('Avarage time of React: ' + test(callback1) + 'ms')
+console.log('Avarage time of React: ' + test(callback1) + 'ms');
 
 var callback2 = function (listView, dataSet) {
     return ReactServerRendering.createElement(listView, dataSet);
 }.bind(this, getListView(ReactServerRendering), dataSet);
-console.log('Avarage time of ReactServerRendering: ' + test(callback2) + 'ms')
+console.log('Avarage time of ReactServerRendering: ' + test(callback2) + 'ms');
 
 function test(callback) {
     var sumTime = 0;

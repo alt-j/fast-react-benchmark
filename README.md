@@ -9,12 +9,12 @@ For `ITERATION_COUNT = 100` and `CHILDREN_COUNT = 100`:
 - Avarage time of ReactServerRendering: 1ms.
 
 For `ITERATION_COUNT = 100` and `CHILDREN_COUNT = 1000`:
-- Avarage time of React: 125ms;
-- Avarage time of ReactServerRendering: 10ms.
+- Avarage time of React: 116ms;
+- Avarage time of ReactServerRendering: 9ms.
 
 For `ITERATION_COUNT = 100` and `CHILDREN_COUNT = 10000`:
-- Avarage time of React: 1201ms;
-- Avarage time of ReactServerRendering: 113ms.
+- Avarage time of React: 1186ms;
+- Avarage time of ReactServerRendering: 96ms.
 
 # Change configuration
 

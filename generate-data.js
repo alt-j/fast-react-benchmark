@@ -5,7 +5,7 @@ module.exports = function (resultCount) {
             title: 'Result ' + i,
             url: '//example.com/',
             categories: [{name: 'some ' + i}, {name: 'some'}, {name: 'some'}],
-            address: '<b>Some address'
+            address: 'Some address' + (i % 20 === 0 ? '<b>' : '' )
         });
     }
 
