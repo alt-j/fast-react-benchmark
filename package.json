@@ -1,6 +1,6 @@
 {
   "name": "react-server-benchmark",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Benchmark for module react-server-rendering",
   "main": "index.js",
   "repository": {
@@ -10,7 +10,7 @@
   "author": "Andrey Morozov <alt-j@yandex-team.ru>",
   "license": "MIT",
   "dependencies": {
-    "react-server-rendering": "0.0.9",
+    "react-server-rendering": "0.0.10",
     "react": "15.3.0",
     "react-dom": "15.3.0"
   },

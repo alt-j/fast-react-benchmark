@@ -5,16 +5,16 @@ All test render list component (`./source/list.js`) with data from dataset (`./d
 System configuration: Node v4.4.5, MacOS 10.9.5, processor 2GHz Intel Core i7, memory 8Gb 1600MHz DDR3.
 
 For `ITERATION_COUNT = 100` and `CHILDREN_COUNT = 100`:
-- Avarage time of React: 12ms;
+- Avarage time of React: 14ms;
 - Avarage time of ReactServerRendering: 1ms.
 
 For `ITERATION_COUNT = 100` and `CHILDREN_COUNT = 1000`:
-- Avarage time of React: 116ms;
-- Avarage time of ReactServerRendering: 9ms.
+- Avarage time of React: 131ms;
+- Avarage time of ReactServerRendering: 6ms.
 
 For `ITERATION_COUNT = 100` and `CHILDREN_COUNT = 10000`:
-- Avarage time of React: 1186ms;
-- Avarage time of ReactServerRendering: 96ms.
+- Avarage time of React: 1353ms;
+- Avarage time of ReactServerRendering: 73ms.
 
 # Change configuration
 
