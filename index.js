@@ -21,7 +21,7 @@ console.log('Avarage time of React: ' + test(callback1) + 'ms');
 var callback2 = function (listView, dataSet) {
     var element = ReactServer.createElement(listView, dataSet);
     return ReactServer.renderToString(element);
-}.bind(this, getListView(ReactServerRendering), dataSet);
+}.bind(this, getListView(ReactServer), dataSet);
 console.log('Avarage time of FastReactServer: ' + test(callback2) + 'ms');
 
 function test(callback) {
