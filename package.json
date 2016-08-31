@@ -1,7 +1,7 @@
 {
   "name": "react-server-benchmark",
-  "version": "0.0.10",
-  "description": "Benchmark for module fast-react-server",
+  "version": "0.0.13",
+  "description": "Benchmark for module fast-react-render and fast-react-server",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -10,7 +10,8 @@
   "author": "Andrey Morozov <alt-j@yandex-team.ru>",
   "license": "MIT",
   "dependencies": {
-    "fast-react-server": "0.0.10",
+    "fast-react-server": "0.0.13",
+    "fast-react-render": "0.0.3",
     "react": "15.3.0",
     "react-dom": "15.3.0"
   },
