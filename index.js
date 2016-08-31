@@ -6,7 +6,7 @@ var CHILDREN_COUNT = 100;
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
 
-var ReactServerRendering = require('react-server-rendering');
+var ReactServer = require('fast-react-server');
 
 var dataSet = require('./generate-data')(CHILDREN_COUNT);
 
@@ -19,10 +19,10 @@ var callback1 = function (listView, dataSet) {
 console.log('Avarage time of React: ' + test(callback1) + 'ms');
 
 var callback2 = function (listView, dataSet) {
-    var element = ReactServerRendering.createElement(listView, dataSet);
-    return ReactServerRendering.renderToString(element);
+    var element = ReactServer.createElement(listView, dataSet);
+    return ReactServer.renderToString(element);
 }.bind(this, getListView(ReactServerRendering), dataSet);
-console.log('Avarage time of ReactServerRendering: ' + test(callback2) + 'ms');
+console.log('Avarage time of FastReactServer: ' + test(callback2) + 'ms');
 
 function test(callback) {
     var sumTime = 0;
