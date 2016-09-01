@@ -10,8 +10,10 @@
   "author": "Andrey Morozov <alt-j@yandex-team.ru>",
   "license": "MIT",
   "dependencies": {
-    "fast-react-server": "0.0.13",
+    "benchmark": "2.1.1",
+    "cliff": "0.1.10",
     "fast-react-render": "0.0.3",
+    "fast-react-server": "0.0.13",
     "react": "15.3.0",
     "react-dom": "15.3.0"
   },
