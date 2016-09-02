@@ -1,19 +1,19 @@
 {
   "name": "react-server-benchmark",
-  "version": "0.0.13",
+  "version": "1.0.0",
   "description": "Benchmark for module fast-react-render and fast-react-server",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alt-j/react-server-benchmark.git"
   },
-  "author": "Andrey Morozov <alt-j@yandex-team.ru>",
+  "author": "Andrey Morozov <altjs@ya.ru>",
   "license": "MIT",
   "dependencies": {
     "benchmark": "2.1.1",
     "cliff": "0.1.10",
-    "fast-react-render": "0.0.3",
-    "fast-react-server": "0.0.13",
+    "fast-react-render": "0.0.5",
+    "fast-react-server": "1.0.0",
     "react": "15.3.0",
     "react-dom": "15.3.0"
   },
