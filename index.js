@@ -1,35 +1,12 @@
 process.env.NODE_ENV = 'production';
 var Benchmark = require('benchmark');
 var cliff = require('cliff');
-var React = require('react');
-var ReactDOMServer = require('react-dom/server');
-var ReactRender = require('fast-react-render');
-var ReactServer = require('fast-react-server');
 
 var childrenCount = process.env.CHILDREN_COUNT || 100;
 
 var dataSet = require('./generate-data')(childrenCount);
 var getListView = require('./source/list');
-
-var tests = {
-    'React + ReactDOMServer': function () {
-        var listView = getListView(React);
-        var element = React.createElement(listView, dataSet);
-        return ReactDOMServer.renderToString(element);
-    },
-
-    'React + FastReactRender': function () {
-        var listView = getListView(React);
-        var element = React.createElement(listView, dataSet);
-        return ReactRender.elementToString(element);
-    },
-
-    'FastReactServer + FastReactRender': function () {
-        var listView = getListView(ReactServer);
-        var element = ReactServer.createElement(listView, dataSet);
-        return ReactRender.elementToString(element);
-    }
-};
+var tests = require('./tests');
 
 var results = [];
 var suite = new Benchmark.Suite('comparison', {
@@ -51,7 +28,7 @@ var suite = new Benchmark.Suite('comparison', {
 Object.keys(tests).forEach(function (name) {
     var i = 0;
     suite.add(name, function () {
-        tests[name]();
+        tests[name].fn.call(this, getListView(tests[name].from), dataSet);
     }, {
         initCount: 10,
         onCycle: function () {
