@@ -12,5 +12,5 @@ module.exports = function (resultCount) {
     return {
         title: 'Some title',
         list: list
-    }
+    };
 };
