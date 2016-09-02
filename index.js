@@ -28,7 +28,7 @@ var suite = new Benchmark.Suite('comparison', {
 Object.keys(tests).forEach(function (name) {
     var i = 0;
     suite.add(name, function () {
-        tests[name].fn.call(this, getListView(tests[name].from), dataSet);
+        tests[name].test.call(this, getListView(tests[name].from), dataSet);
     }, {
         initCount: 10,
         onCycle: function () {
