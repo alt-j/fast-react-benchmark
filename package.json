@@ -1,6 +1,6 @@
 {
   "name": "react-server-benchmark",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Benchmark for module fast-react-render and fast-react-server",
   "main": "index.js",
   "repository": {
@@ -12,8 +12,8 @@
   "dependencies": {
     "benchmark": "2.1.1",
     "cliff": "0.1.10",
-    "fast-react-render": "0.0.5",
-    "fast-react-server": "1.0.0",
+    "fast-react-render": "1.0.0",
+    "fast-react-server": "1.0.1",
     "react": "15.3.0",
     "react-dom": "15.3.0"
   },
