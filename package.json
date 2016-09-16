@@ -1,6 +1,6 @@
 {
-  "name": "react-server-benchmark",
-  "version": "1.0.1",
+  "name": "fast-react-benchmark",
+  "version": "1.1.0",
   "description": "Benchmark for module fast-react-render and fast-react-server",
   "main": "index.js",
   "repository": {
@@ -16,6 +16,9 @@
     "fast-react-server": "1.0.1",
     "react": "15.3.0",
     "react-dom": "15.3.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "benchmark": "node index.js"
