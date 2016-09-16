@@ -5,8 +5,6 @@ var cliff = require('cliff');
 
 var getListView = require('./source/list');
 
-var defaultTests = require('./tests/default');
-
 module.exports = function (tests, childrenCount) {
     var dataSet = require('./generate-data')(childrenCount);
 
@@ -28,16 +26,9 @@ module.exports = function (tests, childrenCount) {
     });
 
     Object.keys(tests).forEach(function (name) {
-        addTest(name, tests[name]);
-    });
-    Object.keys(defaultTests).forEach(function (name) {
-        addTest(name, defaultTests[name]);
-    });
-
-    function addTest(name, test) {
         var i = 0;
         suite.add(name, function () {
-            test.run.call(this, getListView(test.engine), dataSet);
+            tests[name].run.call(this, getListView(tests[name].engine), dataSet);
         }, {
             initCount: 10,
             onCycle: function () {
@@ -49,7 +40,7 @@ module.exports = function (tests, childrenCount) {
                 onTestCompleted.call(this, name);
             }
         });
-    }
+    });
 
     function onTestCompleted(name) {
         results.push({
