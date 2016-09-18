@@ -2,9 +2,9 @@
 
 | Render Tech \ Children count | 100 | 1000 | 10000 |
 --- | --- | --- | ---
-| FastReactServer + FastReactRender | 1ms | 7ms | 90ms  |
-| React + FastReactRender | 4ms | 39ms | 430ms |
-| React + ReactDOMServer  | 14ms | 122ms | 1274ms |
+| FastReactServer + FastReactRender | 1ms | 9ms | 100ms  |
+| React + FastReactRender | 3ms | 30ms | 380ms |
+| React + ReactDOMServer  | 12ms | 120ms | 1246ms |
 
 System configuration: Node v4.4.5, MacOS 10.9.5, processor 2GHz Intel Core i7, memory 8Gb 1600MHz DDR3.
 

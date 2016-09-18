@@ -13,19 +13,19 @@ module.exports = {
         }
     },
 
-    'React + ReactDOMServer': {
-        engine: React,
-        run: function (listView, dataSet) {
-            var element = React.createElement(listView, dataSet);
-            return ReactDOMServer.renderToString(element);
-        }
-    },
-
     'React + FastReactRender': {
         engine: React,
         run: function (listView, dataSet) {
             var element = React.createElement(listView, dataSet);
             return ReactRender.elementToString(element);
+        }
+    },
+
+    'React + ReactDOMServer': {
+        engine: React,
+        run: function (listView, dataSet) {
+            var element = React.createElement(listView, dataSet);
+            return ReactDOMServer.renderToString(element);
         }
     }
 };
