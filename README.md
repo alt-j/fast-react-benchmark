@@ -6,7 +6,7 @@
 | React + FastReactRender | 3ms | 30ms | 380ms |
 | React + ReactDOMServer  | 12ms | 120ms | 1246ms |
 
-System configuration: Node v4.4.5, MacOS 10.9.5, processor 2GHz Intel Core i7, memory 8Gb 1600MHz DDR3.
+System configuration: Node v0.12.15, MacOS 10.11.6, processor 2,7 GHz Intel Core i5, memory 16Gb 1867MHz DDR3.
 
 Each test was render list component (`./source/list.js`) with data from dataset (`./data.js`).
 
