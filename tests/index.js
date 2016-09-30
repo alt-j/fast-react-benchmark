@@ -25,7 +25,7 @@ module.exports = {
         engine: React,
         run: function (listView, dataSet) {
             var element = React.createElement(listView, dataSet);
-            return ReactDOMServer.renderToString(element);
+            return ReactDOMServer.renderToStaticMarkup(element);
         }
     }
 };
